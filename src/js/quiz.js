@@ -111,11 +111,13 @@ class Quiz {
     this.quizIndex = 0;
     this.quiz;
     this.answers = [];
+    this.correctAnswers = [];
     this.score;
   }
   init() {
     this.setQuizes();
     this.setQuiz();
+    this.setCorrectAnswers();
   }
   setQuizes() {
     this.quizes = this.categories.filter(category => category.name === this.category)[0].quizes;
@@ -123,6 +125,12 @@ class Quiz {
   setQuiz() {
     this.quiz = this.quizes[this.quizIndex];
     ui.renderQuiz();
+  }
+  setCorrectAnswers() {
+    this.quizes.forEach(quiz => this.correctAnswers.push(quiz.correct));
+  }
+  setAnswer(answer) {
+    this.answers.push(answer);
   }
 }
 

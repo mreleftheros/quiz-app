@@ -55,20 +55,25 @@ class UI {
     this.container.innerHTML = html;
 
     this.answers = document.getElementById("answers");
-    this.submitBtn = document.querySelector(".main__app__btn");
-
+    
     this.answers.addEventListener("click", e => this.selectAnswer(e));
-    this.submitBtn.addEventListener("click", e => this.submitAnswer(e));
   }
   selectAnswer(e) {
     if (!e.target.className.includes("main__app__answers__answer")) return; // check
-
+    
     for (let child of this.answers.children) {
       child.classList.remove("active");
     }
-
+    
     e.target.classList.add("active");
+
+    this.submitBtn = document.querySelector(".main__app__btn");
     this.submitBtn.classList.add("enabled");
+    this.submitBtn.addEventListener("click", e => this.submitAnswer(e));
+  }
+  submitAnswer(e) {
+    let answer = e.target.getAttribute("data-answer");
+    quiz.setAnswer(answer);
   }
 }
 
