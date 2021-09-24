@@ -110,6 +110,7 @@ class Quiz {
     this.quizes;
     this.quizIndex = 0;
     this.quiz;
+    this.answers = [];
     this.score;
   }
   init() {

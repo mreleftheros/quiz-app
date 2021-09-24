@@ -27,7 +27,30 @@ class UI {
     });
   }
   renderQuiz() {
+    const {question, answer1, answer2, answer3, answer4, correct} = quiz.quiz;
+
+    let html = `
+      <p class="main__app__question">${question}</p>
+      <div class="main__app__answers">
+        <button type="button" class="main__app__answers__answer secondary-btn">
+          <span>${answer1}</span>
+        </button>
+        <button type="button" class="main__app__answers__answer secondary-btn">
+          <span>${answer2}</span>
+        </button>
+        <button type="button" class="main__app__answers__answer secondary-btn">
+          <span>${answer3}</span>
+        </button>
+        <button type="button" class="main__app__answers__answer secondary-btn">
+          <span>${answer4}</span>
+        </button>
+      </div>
+      <button type="button" class="main__app__btn primary-btn">
+        <span>Next</span>
+      </button>
+    `;
     
+    this.container.innerHTML = html;
   }
 }
 
