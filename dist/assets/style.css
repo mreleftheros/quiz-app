@@ -17,6 +17,7 @@ body {
 
 .btn.enabled {
   background: #3d3dff;
+  cursor: pointer;
 }
 
 .btn {
@@ -27,7 +28,6 @@ body {
   border: none;
   outline: none;
   border-radius: 1.5rem;
-  cursor: pointer;
   letter-spacing: 0.1rem;
   background: #9595ff;
   color: #fff;
@@ -90,6 +90,7 @@ body {
   cursor: auto;
 }
 .main__app__categories__category {
+  border: none;
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;

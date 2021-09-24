@@ -1,4 +1,4 @@
-import ui from "./ui";
+import { ui, quiz } from "./ui";
 
 const init = () => {
   ui.init();

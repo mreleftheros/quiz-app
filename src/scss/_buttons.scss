@@ -1,5 +1,6 @@
 .btn.enabled {
   background: $darkBlue;
+  cursor: pointer;
 }
 
 .btn {
@@ -10,7 +11,6 @@
   border: none;
   outline: none;
   border-radius: 1.5rem;
-  cursor: pointer;
   letter-spacing: .1rem;
   background: $blueish;
   color: #fff;
