@@ -105,3 +105,14 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
+.main__app__end {
+  flex: 1;
+  font-size: 3.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+.main__app__end__text {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
