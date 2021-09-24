@@ -1,3 +1,5 @@
+import { ui } from "./ui";
+
 class Quiz {
   constructor(category) {
     this.category = category;
@@ -104,11 +106,16 @@ class Quiz {
           correct: "a4"
         }
       ]}
-    ],
+    ]
+    this.quizes;
+    this.quizIndex = 0;
     this.score;
   }
   init() {
-    
+    this.setQuizes();
+  }
+  setQuizes() {
+    this.quizes = this.categories.filter(category => category.name === this.category)[0].quizes;
   }
 }
 
