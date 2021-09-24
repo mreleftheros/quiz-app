@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boilerplate</title>
+  <title>Quiz App</title>
   <link rel="shortcut icon" href="#" type="image/x-icon">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
   
-  
+  <main class="main">
+    <section class="main__app">
+      <p class="main__app__message">Select a category:</p>
+      <div class="main__app__categories">
+        <div class="main__app__categories__category">
+          <span class="main__app__categories__category__text">Programming</span>
+        </div>
+        <div class="main__app__categories__category">
+          <span class="main__app__categories__category__text">Nutrition</span>
+        </div>
+        <div class="main__app__categories__category">
+          <span class="main__app__categories__category__text">Gym</span>
+        </div>
+      </div>
+      <button class="main__app__btn btn" id="startBtn">
+        <span>Start Quiz</span>
+      </button>
+    </section>
+  </main>
 
   <script src="./assets/bundle.js"></script>
 </body>
