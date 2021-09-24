@@ -8,6 +8,8 @@ class UI {
     this.category;
     this.answers;
     this.submitBtn;
+    this.score;
+    this.endBtn;
   }
   init() {
     this.categories.addEventListener("click", e => this.selectCategory(e));
@@ -31,6 +33,8 @@ class UI {
   renderQuiz() {
     const {question, answer1, answer2, answer3, answer4, correct} = quiz.quiz;
 
+    let text = quiz.quizIndex === 3 ? "Finish" : "Next";
+
     let html = `
       <p class="main__app__question">${question}</p>
       <div class="main__app__answers" id="answers">
@@ -48,7 +52,7 @@ class UI {
         </button>
       </div>
       <button type="button" class="main__app__btn primary-btn">
-        <span>Next</span>
+        <span>${text}</span>
       </button>
     `;
     
@@ -75,6 +79,33 @@ class UI {
     let answer = e.target.getAttribute("data-answer");
     
     quiz.setAnswer(answer);
+  }
+  renderEndScreen() {
+    let counter = 0;
+    let scorePercent = (quiz.score / 4) * 100;
+
+    let html = `
+      <p class="main__app__end">Congratsulations! You scored <span class="main__app__end__text" id="score">${counter}</span>%!</p>
+      <button id="endBtn" class="primary-btn enabled" type="button">Reload</button>
+    `;
+
+    this.container.innerHTML = html;
+
+    this.score = document.getElementById("score");
+    this.endBtn = document.getElementById("endBtn");
+    this.endBtn.addEventListener("click", () => location.reload());
+
+    setTimeout(() => {
+      let timer = setInterval(() => {
+        this.score.textContent = counter;
+
+        if (counter < scorePercent) {
+          counter++;
+        } else {
+          clearInterval(timer);
+        }
+      }, 50);
+    }, 1500)
   }
 }
 

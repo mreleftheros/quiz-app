@@ -146,8 +146,7 @@ class Quiz {
   }
   finish() {
     this.calculateScore();
-    ui.renderRestart();
-    this.reset();
+    ui.renderEndScreen();
   }
 }
 
