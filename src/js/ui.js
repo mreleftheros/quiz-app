@@ -86,22 +86,23 @@ class UI {
 
     let html = `
       <p class="main__app__end">Congratsulations! You scored <span class="main__app__end__text" id="score">${counter}</span>%!</p>
-      <button id="endBtn" class="primary-btn enabled" type="button">Reload</button>
+      <button id="endBtn" class="primary-btn" type="button">Reload</button>
     `;
 
     this.container.innerHTML = html;
 
     this.score = document.getElementById("score");
     this.endBtn = document.getElementById("endBtn");
-    this.endBtn.addEventListener("click", () => location.reload());
-
+    
     setTimeout(() => {
       let timer = setInterval(() => {
         this.score.textContent = counter;
-
+        
         if (counter < scorePercent) {
           counter++;
         } else {
+          this.endBtn.classList.add("enabled");
+          this.endBtn.addEventListener("click", () => location.reload());
           clearInterval(timer);
         }
       }, 50);
