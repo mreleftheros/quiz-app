@@ -112,7 +112,7 @@ class Quiz {
     this.quiz;
     this.answers = [];
     this.correctAnswers = [];
-    this.score;
+    this.score = 0;
   }
   init() {
     this.setQuizes();
@@ -139,8 +139,15 @@ class Quiz {
     this.quizIndex++;
     this.setQuiz();
   }
+  calculateScore() {
+    for (let i = 0; i < this.answers.length; i++) {
+      this.score = this.answers[i] === this.correctAnswers[i] ? this.score + 1 : this.score;
+    }
+  }
   finish() {
-    console.dir(this.answers)
+    this.calculateScore();
+    ui.renderRestart();
+    this.reset();
   }
 }
 
