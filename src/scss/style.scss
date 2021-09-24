@@ -36,11 +36,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-
-      &__category.active {
-        background: $darkGray;
-        cursor: auto;
-      }
     }
 
     // Quiz

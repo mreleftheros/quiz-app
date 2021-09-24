@@ -6,6 +6,8 @@ class UI {
     this.categories = document.getElementById("categories");
     this.startBtn = document.getElementById("startBtn");
     this.category;
+    this.answers;
+    this.submitBtn;
   }
   init() {
     this.categories.addEventListener("click", e => this.selectCategory(e));
@@ -52,11 +54,21 @@ class UI {
     
     this.container.innerHTML = html;
 
-    const answers = document.getElementById("answers");
-    const submitBtn = document.querySelector(".main__app__btn");
+    this.answers = document.getElementById("answers");
+    this.submitBtn = document.querySelector(".main__app__btn");
 
-    answers.addEventListener("click", e => this.selectAnswer(e));
-    submitBtn.addEventListener("click", e => this.submitQuiz(e));
+    this.answers.addEventListener("click", e => this.selectAnswer(e));
+    this.submitBtn.addEventListener("click", e => this.submitAnswer(e));
+  }
+  selectAnswer(e) {
+    if (!e.target.className.includes("main__app__answers__answer")) return; // check
+
+    for (let child of this.answers.children) {
+      child.classList.remove("active");
+    }
+
+    e.target.classList.add("active");
+    this.submitBtn.classList.add("enabled");
   }
 }
 
