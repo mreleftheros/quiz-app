@@ -123,14 +123,24 @@ class Quiz {
     this.quizes = this.categories.filter(category => category.name === this.category)[0].quizes;
   }
   setQuiz() {
-    this.quiz = this.quizes[this.quizIndex];
-    ui.renderQuiz();
+    if (this.quizIndex < 4) {
+      this.quiz = this.quizes[this.quizIndex];
+      ui.renderQuiz();
+    } else {
+      this.finish();
+    }
   }
   setCorrectAnswers() {
     this.quizes.forEach(quiz => this.correctAnswers.push(quiz.correct));
   }
   setAnswer(answer) {
     this.answers.push(answer);
+
+    this.quizIndex++;
+    this.setQuiz();
+  }
+  finish() {
+    console.dir(this.answers)
   }
 }
 

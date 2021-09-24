@@ -69,10 +69,11 @@ class UI {
 
     this.submitBtn = document.querySelector(".main__app__btn");
     this.submitBtn.classList.add("enabled");
-    this.submitBtn.addEventListener("click", e => this.submitAnswer(e));
+    this.submitBtn.addEventListener("click", () => this.submitAnswer(e));
   }
   submitAnswer(e) {
     let answer = e.target.getAttribute("data-answer");
+    
     quiz.setAnswer(answer);
   }
 }
