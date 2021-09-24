@@ -38,7 +38,7 @@ body {
   text-shadow: 1px 1px 3px #000;
 }
 
-.secondary-btn.enabled {
+.secondary-btn.active {
   background: #818181;
   cursor: auto;
 }
@@ -93,10 +93,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-.main__app__categories__category.active {
-  background: #818181;
-  cursor: auto;
 }
 .main__app__question {
   flex: 1;
