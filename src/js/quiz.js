@@ -6,7 +6,7 @@ class Quiz {
     this.categories = [
       {name: "programming", quizes: [
         {
-          question: "q1",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -14,7 +14,7 @@ class Quiz {
           correct: "a1"
         },
         {
-          question: "q2",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -22,7 +22,7 @@ class Quiz {
           correct: "a2"
         },
         {
-          question: "q3",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -30,7 +30,7 @@ class Quiz {
           correct: "a3"
         },
         {
-          question: "q4",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -40,7 +40,7 @@ class Quiz {
       ]},
       {name: "nutrition", quizes: [
         {
-          question: "q1",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -48,7 +48,7 @@ class Quiz {
           correct: "a1"
         },
         {
-          question: "q2",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -56,7 +56,7 @@ class Quiz {
           correct: "a2"
         },
         {
-          question: "q3",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -64,7 +64,7 @@ class Quiz {
           correct: "a3"
         },
         {
-          question: "q4",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -74,7 +74,7 @@ class Quiz {
       ]},
       {name: "gym", quizes: [
         {
-          question: "q1",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -82,7 +82,7 @@ class Quiz {
           correct: "a1"
         },
         {
-          question: "q2",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -90,7 +90,7 @@ class Quiz {
           correct: "a2"
         },
         {
-          question: "q3",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -98,7 +98,7 @@ class Quiz {
           correct: "a3"
         },
         {
-          question: "q4",
+          question: "q",
           answer1: "a1",
           answer2: "a2",
           answer3: "a3",
@@ -109,13 +109,19 @@ class Quiz {
     ]
     this.quizes;
     this.quizIndex = 0;
+    this.quiz;
     this.score;
   }
   init() {
     this.setQuizes();
+    this.setQuiz();
   }
   setQuizes() {
     this.quizes = this.categories.filter(category => category.name === this.category)[0].quizes;
+  }
+  setQuiz() {
+    this.quiz = this.quizes[this.quizIndex];
+    ui.renderQuiz();
   }
 }
 

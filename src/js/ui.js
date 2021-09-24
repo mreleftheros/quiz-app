@@ -26,6 +26,9 @@ class UI {
       quiz.init();
     });
   }
+  renderQuiz() {
+    
+  }
 }
 
 const ui = new UI();
