@@ -31,17 +31,17 @@ class UI {
 
     let html = `
       <p class="main__app__question">${question}</p>
-      <div class="main__app__answers">
-        <button type="button" class="main__app__answers__answer secondary-btn">
+      <div class="main__app__answers" id="answers">
+        <button type="button" data-answer="a1" class="main__app__answers__answer secondary-btn">
           <span>${answer1}</span>
         </button>
-        <button type="button" class="main__app__answers__answer secondary-btn">
+        <button type="button" data-answer="a2" class="main__app__answers__answer secondary-btn">
           <span>${answer2}</span>
         </button>
-        <button type="button" class="main__app__answers__answer secondary-btn">
+        <button type="button" data-answer="a3" class="main__app__answers__answer secondary-btn">
           <span>${answer3}</span>
         </button>
-        <button type="button" class="main__app__answers__answer secondary-btn">
+        <button type="button" data-answer="a4" class="main__app__answers__answer secondary-btn">
           <span>${answer4}</span>
         </button>
       </div>
@@ -51,6 +51,12 @@ class UI {
     `;
     
     this.container.innerHTML = html;
+
+    const answers = document.getElementById("answers");
+    const submitBtn = document.querySelector(".main__app__btn");
+
+    answers.addEventListener("click", e => this.selectAnswer(e));
+    submitBtn.addEventListener("click", e => this.submitQuiz(e));
   }
 }
 
